@@ -1,3 +1,21 @@
 export function GET(request: Request) {
-  return Response.json({ hello: "world" });
+  const data = [
+    {
+      id: 1,
+      text: "Just launched my new app!",
+      isLiked: false,
+    },
+    {
+      id: 2,
+      text: "Working on some new UI designs today.",
+      isLiked: true,
+    },
+    {
+      id: 3,
+      text: "Morning run complete!",
+      isLiked: true,
+    },
+  ];
+
+  return Response.json(data);
 }
