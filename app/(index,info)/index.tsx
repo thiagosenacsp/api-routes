@@ -34,7 +34,41 @@ export default function Page() {
             </Form.Link>
           </Form.HStack>
         </Form.Section>
+
+        <Form.Section title="Recent Posts">
+          {dummyPost.map((post) => (
+            <Form.Link
+              key={post.id}
+              href={"/two"}
+              systemImage={post.isLiked ? "heart.fill" : "heart"}
+              style={{
+                overflow: "hidden",
+                flexShrink: 1,
+              }}
+            >
+              {post.text}
+            </Form.Link>
+          ))}
+        </Form.Section>
       </Form.List>
     </View>
   );
 }
+
+const dummyPost = [
+  {
+    id: 1,
+    text: "Just launched my new app!",
+    isLiked: false,
+  },
+  {
+    id: 2,
+    text: "Working on some new UI designs today.",
+    isLiked: true,
+  },
+  {
+    id: 3,
+    text: "Morning run complete!",
+    isLiked: true,
+  },
+];
